@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import BookCard from './ProductCard';
+import BookCard from './ProductCard.js';
 
 function ShowBookList() {
   const [books, setBooks] = useState([]);
@@ -38,6 +38,12 @@ function ShowBookList() {
               className='btn btn-outline-warning float-right'
             >
               + Add New product
+            </Link>
+            <Link
+              to='/discussion-forum'
+              className='btn btn-outline-warning float-right'
+            >
+              Discussion forum
             </Link>
             <br />
             <br />

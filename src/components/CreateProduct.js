@@ -20,12 +20,12 @@ const CreateBook = (props) => {
   const onChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
   };
-  const onChange_img = (e) =>{
-    setBook({...book, photo: e.target.files[0].append()}); 
-    // console.log(e.target.files[0]);
-    // book.photo = e.target.files[0];
-    // console.log(book.photo);
-  };
+  // const onChange_img = (e) =>{
+  //   setBook({...book, photo: e.target.files[0].append()}); 
+  //   // console.log(e.target.files[0]);
+  //   // book.photo = e.target.files[0];
+  //   // console.log(book.photo);
+  // };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -62,6 +62,9 @@ const CreateBook = (props) => {
             <br />
             <Link to='/' className='btn btn-outline-warning float-left'>
               Show Product List
+            </Link>
+            <Link to='/create-blog' className='btn btn-outline-warning float-left'>
+              write something to discussion forum
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
@@ -134,7 +137,7 @@ const CreateBook = (props) => {
                   onChange={onChange}
                 />
               </div>
-              <div className='form-group'>
+              {/* <div className='form-group'>
                 <input
                   type='file'
                   accept=".png, .jpg, .jpeg"
@@ -142,7 +145,7 @@ const CreateBook = (props) => {
                   className='form-control'
                   onChange={onChange_img}
                 />
-              </div>
+              </div> */}
               {/* <div className='form-group'>
                 <input
                   type='text'
