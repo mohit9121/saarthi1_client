@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ShowBlog.css'
+import './Discussion.css'
 import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/NavBar.js';
  
 const BlogList = () => { 
   const [blogs, setBlogs] = useState([]);
@@ -15,6 +16,8 @@ const BlogList = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div className="blog-list">
       <div className='col-md-11'>
         <Link
@@ -22,12 +25,6 @@ const BlogList = () => {
           className='btn btn-outline-warning float-right'
         >
           + Add New blog
-        </Link>
-        <Link
-          to='/'
-          className='btn btn-outline-warning float-right'
-        >
-          Go to Homepage
         </Link>
         
         <br />
@@ -41,6 +38,7 @@ const BlogList = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

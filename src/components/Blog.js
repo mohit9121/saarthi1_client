@@ -18,7 +18,7 @@ const BlogForm = () => {
             await axios.post('http://localhost:8082/api/blog', blog);
             setTitle('');
             setContent('');
-            navigate('/');
+            navigate('/test');
         } catch (error) {
             console.error(error);
         }

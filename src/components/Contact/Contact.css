@@ -1,0 +1,105 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f2f2f2;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .header-subtitle {
+    font-size: 18px;
+    color: #3e8e41;
+    margin-bottom: 20px;
+  }
+  
+  .team-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .team-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e8e41;
+    margin-bottom: 20px;
+  }
+  
+  .team-section-advisor {
+    font-size: 18px;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .team-section-members-title {
+    font-size: 18px;
+    color: #3e8e41;
+    margin-bottom: 10px;
+  }
+  
+  .team-section-members-list {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .form-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e8e41;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-size: 18px;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .form-input {
+    font-size: 16px;
+    padding: 10px;
+    width: 400px;
+    border: 2px solid #3e8e41;
+    border-radius: 5px;
+  }
+  
+  .form-textarea {
+    height: 200px;
+    border: 2px solid #3e8e41;
+    border-radius: 5px;
+  }
+  
+  .form-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #3e8e41;
+  }
+  

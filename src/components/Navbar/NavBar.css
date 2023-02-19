@@ -1,0 +1,37 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #444479;
+  color: #f7f3f3;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__menu-item {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.navbar__user {
+  margin-left: 1rem;
+}

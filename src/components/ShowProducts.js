@@ -3,8 +3,27 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BookCard from './ProductCard.js';
+import { useNavigate } from 'react-router-dom';
+// import jwt from "jsonwebtoken";
 
 function ShowBookList() {
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  // console.log(token); 
+  const id = token;
+  const handleLogout = () => {
+    // Remove the JWT from local storage
+    console.log("andar gaya ");
+    localStorage.removeItem("token");
+
+    // Navigate to the login page
+    // props.history.push("/login");
+    navigate('/')
+  };
+  // const payload = jwt.decode(token);
+  // console.log(payload);
+  
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -17,6 +36,23 @@ function ShowBookList() {
         console.log('Error from ShowBookList');
       });
   }, []);
+
+
+  // console.log("no user"); 
+  const [users, setUser] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(`http://localhost:8082/api/users/${id}`);
+        setUser(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, [id]);
+  // console.log(users)
+
+
 
   const bookList =
     books.length === 0
@@ -53,6 +89,28 @@ function ShowBookList() {
 
         <div className='list'>{bookList}</div>
       </div>
+      <div>
+        {id ? (
+          <>
+            <h1>Welcome, {users.username}!</h1>
+            <button onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <h1>Welcome</h1>
+            <Link
+              to='/login'
+              className='btn btn-outline-warning float-right'
+            >
+              Login
+            </Link>
+          </>
+        )}
+        {/* <LogoutButton {...props} /> */}
+      </div>
+      {/* <div className='info1'>
+        <h1>welcome {users.username}</h1>
+      </div> */}
     </div>
   );
 }
