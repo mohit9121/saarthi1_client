@@ -8,6 +8,7 @@ import Contact from './components/Contact/Contact.js';
 import BlogList from './components/Discussion/Discussion.js';
 import ShowItems from './components/ShowItems/ShowItems.js';
 import ShowItemDetails from './components/ShowItemDetails/ShowItemDetails.js';
+import ShowBlog from './components/ShowBlog/ShowBlog.js';
 
 import CreateBook from './components/CreateProduct.js';
 import ShowBookList from './components/ShowProducts.js';
@@ -44,10 +45,11 @@ const App = () => {
           <Route path='/show-items' element={<ShowItems/>} /> 
           <Route path='/show-item/:productId' element={<ShowItemDetails/>} /> 
           <Route path='/edit-item/:id' element={<EditItemDetails/>} /> 
+          <Route path='/show-blog/:blogId' element={<ShowBlog/>} /> 
         </Routes>
       </div> 
     </Router>
   );
-};
+}; 
 
 export default App;

@@ -34,7 +34,13 @@ const BlogList = () => {
       {blogs.map(blog => (
         <div key={blog._id} className="blog-item">
           <h2 className="blog-item-title">{blog.title}</h2>
-          <p className="blog-item-content">{blog.content}</p>
+          <p className="blog-item-content">{blog.content.slice(0, 200)} ....</p>
+          <p className="blog-item-content">Likes: {blog.likes}</p>
+          <p className="blog-item-content">Dislikes: {blog.dislikes}</p>
+          <p className="blog-item-content">Comments: {blog.comments}</p>
+          <Link to = {`/show-blog/${blog._id}`} className='read-more-button'>
+            Read More
+          </Link>
         </div>
       ))}
     </div>

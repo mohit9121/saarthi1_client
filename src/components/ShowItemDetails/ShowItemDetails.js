@@ -23,7 +23,12 @@ function ShowItemDetails() {
       });
   }, [productId]);
   const handleEdit = () => {
+    if(currentUserId === thisProductId){
     navigate(`/edit-item/${productId}`);
+    }
+    else{
+      alert('since this is not your product so you cannot edit this item');
+    }
   };
 
   const handleDelete = () => {
