@@ -1,7 +1,8 @@
 // Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo192.png';
+// import logo from '../../assets/logo192.png';
+import logo from '../../assets/logosar1.png';
 import './NavBar.css';
 import axios from 'axios';
 import Login from '../Login/Login.js';

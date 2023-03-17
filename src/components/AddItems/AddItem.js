@@ -3,6 +3,7 @@ import axios from 'axios';
 import './AddItem.styles.css';
 import Navbar from '../Navbar/NavBar.js';
 import { useNavigate } from 'react-router-dom';
+import LoginPrompt from '../Loginprompt/Loginprompt.js';
 
 const AddItem = () => {
     const navigate = useNavigate();
@@ -15,9 +16,10 @@ const AddItem = () => {
         });
     };
 
+    const userId = localStorage.getItem('token');
+    console.log(userId);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const userId = localStorage.getItem('token');
         // console.log(userId); 
         // console.log(itemData); 
         axios.post('http://localhost:8082/api/users/add-item', { userId, itemData })
@@ -28,6 +30,16 @@ const AddItem = () => {
     };
     const districts = ["District1", "District2", "District3", "District4", "District5"];
     const categories = ["MilkProduct", "EggProduct", "MeatProduct", "CropsProduct", "Others"];
+
+    if(userId == null){
+        return(
+            <>
+            <Navbar />
+            <LoginPrompt/>
+            </>
+        )
+    }
+
     return (
         <>
             <Navbar />

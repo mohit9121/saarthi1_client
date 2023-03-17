@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './BlogForm.css';
 import { useNavigate } from 'react-router-dom';
+import LoginPrompt from './Loginprompt/Loginprompt.js';
+import Navbar from './Navbar/NavBar.js';
 
 const BlogForm = () => {
     const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+
+    const userId = localStorage.getItem('token'); 
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -24,7 +28,19 @@ const BlogForm = () => {
         }
     };
 
+    if(userId == null){
+        return(
+            <>
+            <Navbar />
+            <LoginPrompt />
+            </>
+        )
+    }
+
     return (
+
+        <>
+        <Navbar />
         <form onSubmit={handleSubmit} className="blog-form">
             <input
                 type="text"
@@ -41,6 +57,7 @@ const BlogForm = () => {
             />
             <button type="submit" className="blog-form-button">Save</button>
         </form>
+        </>
     );
 };
 

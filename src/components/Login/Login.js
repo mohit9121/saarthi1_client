@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Login.css";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Navbar from "../Navbar/NavBar.js";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -39,6 +40,8 @@ const Login = () => {
     };
 
     return (
+        <>
+        <Navbar/>
         <div className="form-container">
             <h1 className="form-header">Login</h1>
             <form className="form" onSubmit={e => onSubmit(e)}>
@@ -69,11 +72,12 @@ const Login = () => {
             </form>
             <Link
                 to='/register'
-                className='btn btn-outline-warning float-right'
+                className='no_account_btn'
             >
                 Dont have an account ? Register here
             </Link>
         </div>
+        </>
     );
 };
 
