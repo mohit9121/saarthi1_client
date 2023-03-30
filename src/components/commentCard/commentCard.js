@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
 import './commentCard.css';
 import { FaThumbsUp } from 'react-icons/fa/index.js';
-
-
-
 
 function CommentCard(props) {
     return (

@@ -27,13 +27,8 @@ const Login = () => {
         const body = JSON.stringify({ email, password });
         try {
             const res = await axios.post("http://localhost:8082/api/users/login", body, config);
-            // console.log(res.data.id);
-
-            //store token in local storage 
             localStorage.setItem("token", res.data.id);
-
-            navigate('/test');
-
+            navigate('/');
         } catch (err) {
             console.error(err);
         }
@@ -74,7 +69,7 @@ const Login = () => {
                 to='/register'
                 className='no_account_btn'
             >
-                Dont have an account ? Register here
+                Don't have an account ? Register here
             </Link>
         </div>
         </>

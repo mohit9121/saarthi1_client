@@ -1,46 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import './Homepage.css'
-import Navbar from '../Navbar/NavBar.js';
-import ItemCard from '../ItemCard/ItemCard.js';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "../Navbar/NavBar.js";
+import ItemCard from "../ItemCard/ItemCard.js";
+import { cities } from "../../assets/locations.js";
+import "./Homepage.css";
 
 function HomePage() {
-
-  // const id = localStorage.getItem("token");
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8082/api/blog/itemsall")
-      .then(response => {
+    axios
+      .get("http://localhost:8082/api/blog/itemsall")
+      .then((response) => {
         setProducts(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }, []);
 
-
-
-  const [filters, setFilters] = useState({ district: '', category: '' });
+  const [filters, setFilters] = useState({ district: "", category: "" });
 
   const handleFilterChange = (event) => {
     setFilters({
       ...filters,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(filters.district);
-    axios.get(`http://localhost:8082/api/blog/search?district=${filters.district}&category=${filters.category}`)
-      .then(response => {
+    axios
+      .get(
+        `http://localhost:8082/api/blog/search?district=${filters.district}&category=${filters.category}`
+      )
+      .then((response) => {
         setProducts(response.data);
-        // console.log(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -59,11 +55,9 @@ function HomePage() {
               onChange={handleFilterChange}
             >
               <option value="">All</option>
-              <option value="District1">District1</option>
-              <option value="District2">District2</option>
-              <option value="District3">District3</option>
-              <option value="District4">District4</option>
-              <option value="District5">District5</option>
+               {cities.map((city) => {
+                return <option value={city}>{city}</option>
+              })} 
             </select>
           </div>
           <div className="form-group">
@@ -84,36 +78,24 @@ function HomePage() {
           </div>
           <button type="submit">Filter</button>
         </form>
-        {/* <div className="product-list">
-          {products.map(product => (
-            <ItemCard
-              key={product._id}
-              name={product.itemName}
-              district={product.district}
-              price={product.price}
-              sellerName={product.sellerName}
-              category={product.category}
-              id1 = {product._id}
-            />
-          ))}
-        </div> */}
         <div className="product-list">
           {products.length === 0 ? (
             <p>No items available with selected specifications</p>
           ) : (
-            products.map(product => (
-              <div className="item-card">
-                <ItemCard
-                  key={product._id}
-                  name={product.itemName}
-                  district={product.district}
-                  price={product.price}
-                  sellerName={product.sellerName}
-                  category={product.category}
-                  id1 = {product._id}
-                />
-              </div>
-            ))
+            products.map((product) => {
+              return (
+                <div className="item-card">
+                  <ItemCard
+                    key={product._id}
+                    name={product.itemName}
+                    district={product.district}
+                    price={product.price}
+                    sellerName={product.sellerName}
+                    category={product.category}
+                  />
+                </div>
+              );
+            })
           )}
         </div>
       </main>

@@ -24,7 +24,7 @@ const ShowItems = () => {
     <div>
       <Navbar/>
       <h2>Your Products</h2>
-      <Link to = '/add-item'>add new product/item</Link>
+      <Link to = '/add-item'>Add new product</Link>
       <div className="product-list">
       <ul>
         {products.map(product => (
