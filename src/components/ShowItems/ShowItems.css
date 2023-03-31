@@ -3,29 +3,31 @@
 ul{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-}
+   }
 
 .item-card {
     display: flex;
     justify-content: center;
-    width: 20%;
-    margin: 20px;
+    width: 100%;
 }
 
 h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    color:black;
 }
 
 /* Style for the link "add new product/item" */
 a {
     display: block;
     font-size: 16px;
-    color: #007bff;
+    color:black;
     text-decoration: none;
     margin-bottom: 20px;
+}
+a:hover{
+    color: green;
 }
 
 /* Style for the unordered list */
@@ -40,8 +42,6 @@ ul {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
 }
 
 /* Style for the item name */

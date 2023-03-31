@@ -6,12 +6,13 @@
   .about__title {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #3f51b5;
+    color:#0E4F55;
   }
   
   .about__description {
     font-size: 18px;
     margin-bottom: 20px;
+    text-align: justify;
     color: #333;
   }
   
@@ -26,7 +27,7 @@
   }
   
   .about__testimonial-avatar {
-    border-radius: 50%;
+   
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
@@ -39,7 +40,7 @@
   
   .about__testimonial-name {
     font-size: 16px;
-    color: #3f51b5;
+    color:#0E4F55;
     margin-top: 10px;
   }
   

@@ -8,7 +8,7 @@ import './ShowItems.css'
 
 const ShowItems = () => {
 
-    const userId = localStorage.getItem("token");
+  const userId = localStorage.getItem("token");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -21,28 +21,31 @@ const ShowItems = () => {
   }, [userId]);
 
   return (
-    <div>
-      <Navbar/>
-      <h2>Your Products</h2>
-      <Link to = '/add-item'>Add new product</Link>
-      <div className="product-list">
-      <ul>
-        {products.map(product => (
-          <div className="item-card">
-          <ItemCard
-          key={product._id}
-          name={product.itemName}
-          district={product.district}
-          price={product.price}
-          sellerName={product.sellerName}
-          category={product.category}
-          id1 = {product._id}
-        />
+    <>
+    <Navbar />
+      <div className="container">
+        <h2>Your Products</h2>
+        <Link to='/add-item'>Add new product</Link>
+        <div className="product-list">
+          <ul>
+            {products.map(product => (
+              <div className="item-card">
+                <ItemCard
+                  key={product._id}
+                  name={product.itemName}
+                  district={product.district}
+                  price={product.price}
+                  sellerName={product.sellerName}
+                  category={product.category}
+                  id1={product._id}
+                />
+              </div>
+            ))}
+          </ul>
         </div>
-        ))}
-      </ul>
       </div>
-    </div>
+    </>
+
   );
 };
 
