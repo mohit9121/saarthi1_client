@@ -28,7 +28,7 @@ const ItemCard = ({ name, district, price, sellerName, category, id1 }) => {
       </div>
       <div className="card-content">
         <h2>
-        <Link to={`/show-item/${id1}`}> {category} </Link>
+        <Link className="card-content" to={`/show-item/${id1}`}> {category} </Link>
         </h2>
         <p>{district}</p>
         <p>name: {name}</p>

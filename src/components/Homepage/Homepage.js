@@ -12,6 +12,8 @@ function HomePage() {
       .get("http://localhost:8082/api/blog/itemsall")
       .then((response) => {
         setProducts(response.data);
+        // console.log(response);
+        // console.log(response.data[0]._id)
       })
       .catch((error) => {
         console.log(error);
@@ -76,7 +78,7 @@ function HomePage() {
               <option value="Others">Others</option>
             </select>
           </div>
-          <button type="submit">Filter</button>
+          <button type="submit" >Filter</button>
         </form>
         <div className="product-list">
           {products.length === 0 ? (
@@ -92,6 +94,7 @@ function HomePage() {
                     price={product.price}
                     sellerName={product.sellerName}
                     category={product.category}
+                    id1={product._id}
                   />
                 </div>
               );

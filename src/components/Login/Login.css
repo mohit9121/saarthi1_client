@@ -80,7 +80,7 @@
   }
   
   .form-submit {
-    background-color: #007bff;
+    background-color:#009245;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -91,14 +91,14 @@
   }
   
   .form-submit:hover {
-    background-color: #0069d9;
+    background-color:#0E4F55;
   }
   
   .no_account_btn {
     display: block;
     margin-top: 20px;
     text-align: center;
-    color: #007bff;
+    color:#0E4F55;
     text-decoration: none;
     font-size: 1rem;
     /* border: 3px solid red; */
