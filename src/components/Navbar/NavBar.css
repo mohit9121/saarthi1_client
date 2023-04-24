@@ -27,6 +27,7 @@
 }
 
 .navbar__menu-item{
+  font-size: larger;
   color:black;
   text-decoration: none;
   margin-right: 1rem;

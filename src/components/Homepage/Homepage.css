@@ -78,7 +78,17 @@ button {
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
+  margin: 1rem;
   padding: 1rem;
   width: calc(33.33% - 1rem);
+}
+
+Row{
+  border: none;
+}
+Col{
+  border: none;
+}
+Container{
+  border: none;
 }
