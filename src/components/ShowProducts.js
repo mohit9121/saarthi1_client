@@ -3,7 +3,6 @@ import "../App.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import BookCard from "./ProductCard.js";
-import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar/NavBar.js";
 
 function ShowBookList() {

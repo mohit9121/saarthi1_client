@@ -12,8 +12,6 @@ function HomePage() {
       .get("http://localhost:8082/api/blog/itemsall")
       .then((response) => {
         setProducts(response.data);
-        // console.log(response);
-        // console.log(response.data[0]._id)
       })
       .catch((error) => {
         console.log(error);
@@ -86,7 +84,7 @@ function HomePage() {
           ) : (
             products.map((product) => {
               return (
-                <div className="item-card">
+                <div className="item-card-home">
                   <ItemCard
                     key={product._id}
                     name={product.itemName}
