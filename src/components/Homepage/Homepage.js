@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "../Navbar/NavBar.js";
 import ItemCard from "../ItemCard/ItemCard.js";
 import { cities } from "../../assets/locations.js";
-import { Container, Col, Row, Card } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import "./Homepage.css";
 
 function HomePage() {
