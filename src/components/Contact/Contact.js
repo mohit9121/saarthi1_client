@@ -20,7 +20,6 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    // Implement your own logic for sending the form data to the server
     try {
       const res = axios.post(
         "http://localhost:8082/api/users/send-email",
@@ -50,16 +49,20 @@ const Contact = () => {
 
         <div className="team-section">
           <h2 className="team-section-title">Our Team</h2>
-          <p className="team-section-advisor">Advisor: Dr. Suman Kumar</p>
-          <p className="team-section-members-title">Members:</p>
-          <ol className="team-section-members-list">
-            <li>Mohit Vyas</li>
-            <li>Anirudh Sharma</li>
-            <li>Tiya Jain</li>
-            <li>Tushar Sharma</li>
-            <li>Chirag Rathi</li>
-            <li>Aryan Bansal</li>
-          </ol>
+          <p className="team-section-members-title">
+            {" "}
+            <b>ADVISOR: </b>Dr. Suman Kumar
+          </p>
+          <p className="team-section-members-title">
+            <b>MEMBERS: </b>
+            <br />
+            Mohit Vyas <br />
+            Anirudh Sharma <br />
+            Tiya Jain <br />
+            Tushar Sharma <br />
+            Chirag Rathi <br />
+            Aryan Bansal
+          </p>
         </div>
 
         <div className="form-section">

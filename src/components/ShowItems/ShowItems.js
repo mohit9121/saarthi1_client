@@ -27,7 +27,6 @@ const ShowItems = () => {
         <h2>Your Products</h2>
         <Link to='/add-item'>Add new product</Link>
         <div className="product-list">
-          <ul>
             {products.map(product => (
               <div className="item-card">
                 <ItemCard
@@ -41,7 +40,6 @@ const ShowItems = () => {
                 />
               </div>
             ))}
-          </ul>
         </div>
       </div>
     </>

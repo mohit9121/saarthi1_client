@@ -13,8 +13,6 @@ function HomePage() {
       .get("http://localhost:8082/api/blog/itemsall")
       .then((response) => {
         setProducts(response.data);
-        // console.log(response);
-        // console.log(response.data[0]._id)
       })
       .catch((error) => {
         console.log(error);
