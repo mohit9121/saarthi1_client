@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../Navbar/NavBar.js";
 import ItemCard from "../ItemCard/ItemCard.js";
 import { cities } from "../../assets/locations.js";
+import { Container, Col, Row, Card } from "react-bootstrap";
 import "./Homepage.css";
 
 function HomePage() {
@@ -55,9 +56,9 @@ function HomePage() {
               onChange={handleFilterChange}
             >
               <option value="">All</option>
-               {cities.map((city) => {
-                return <option value={city}>{city}</option>
-              })} 
+              {cities.map((city) => {
+                return <option value={city}>{city}</option>;
+              })}
             </select>
           </div>
           <div className="form-group">
@@ -76,29 +77,39 @@ function HomePage() {
               <option value="Others">Others</option>
             </select>
           </div>
-          <button type="submit" >Filter</button>
+          <button type="submit">Filter</button>
         </form>
-        <div className="product-list">
-          {products.length === 0 ? (
-            <p>No items available with selected specifications</p>
-          ) : (
-            products.map((product) => {
-              return (
-                <div className="item-card-home">
-                  <ItemCard
-                    key={product._id}
-                    name={product.itemName}
-                    district={product.district}
-                    price={product.price}
-                    sellerName={product.sellerName}
-                    category={product.category}
-                    id1={product._id}
-                  />
-                </div>
-              );
-            })
-          )}
-        </div>
+        {products.length === 0 ? (
+          <p>No items available with selected specifications</p>
+        ) : (
+          <Container>
+            <Row>
+              {products.map((product) => {
+                return (
+                  <>
+                    <Col
+                      xs={12}
+                      md={4}
+                      className="d-flex justify-content-evenly"
+                    >
+                      <div className="item-card">
+                        <ItemCard
+                          key={product._id}
+                          name={product.itemName}
+                          district={product.district}
+                          price={product.price}
+                          sellerName={product.sellerName}
+                          category={product.category}
+                          id1={product._id}
+                        />
+                      </div>
+                    </Col>
+                  </>
+                );
+              })}
+            </Row>
+          </Container>
+        )}
       </main>
     </div>
   );

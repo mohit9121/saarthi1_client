@@ -49,15 +49,70 @@ const Contact = () => {
 
         <div className="team-section">
           <h2 className="team-section-title">Our Team</h2>
-          <p className="team-section-advisor"><b>Advisor: </b>Dr. Suman Kumar</p>
-          <p className="team-section-members-title"> <b>Members: </b>
-            Mohit Vyas
-            Anirudh Sharma
-            Tiya Jain
-            Tushar Sharma
-            Chirag Rathi
+          <p className="team-section-members-title">
+            {" "}
+            <b>ADVISOR: </b>Dr. Suman Kumar
+          </p>
+          <p className="team-section-members-title">
+            <b>MEMBERS: </b>
+            <br />
+            Mohit Vyas <br />
+            Anirudh Sharma <br />
+            Tiya Jain <br />
+            Tushar Sharma <br />
+            Chirag Rathi <br />
             Aryan Bansal
           </p>
+        </div>
+
+        <div className="form-section">
+          <h2 className="form-section-title">Contact Form</h2>
+          <form className="form" onSubmit={handleSubmit}>
+            <label className="form-label" htmlFor="name">
+              Name:
+              <input
+                className="form-input"
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <br />
+            <br />
+            <label className="form-label" htmlFor="email">
+              Email:
+              <input
+                className="form-input"
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <br />
+            <br />
+            <label className="form-label" htmlFor="message">
+              Message:
+              <textarea
+                className="form-input form-textarea"
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <br />
+            <br />
+            <button className="form-button" type="submit">
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </>
