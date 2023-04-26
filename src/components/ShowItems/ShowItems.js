@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from '../Navbar/NavBar.js';
-import ItemCard from '../ItemCard/ItemCard.js';
+import Navbar from "../Navbar/NavBar.js";
+import ItemCard from "../ItemCard/ItemCard.js";
 import { Link } from "react-router-dom";
-import './ShowItems.css'
-
+import { Container, Col, Row } from "react-bootstrap";
+import "./ShowItems.css";
 
 const ShowItems = () => {
-
   const userId = localStorage.getItem("token");
   const [products, setProducts] = useState([]);
 
@@ -22,28 +21,31 @@ const ShowItems = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div className="container">
         <h2>Your Products</h2>
-        <Link to='/add-item'>Add new product</Link>
-        <div className="product-list">
-            {products.map(product => (
-              <div className="item-card">
-                <ItemCard
-                  key={product._id}
-                  name={product.itemName}
-                  district={product.district}
-                  price={product.price}
-                  sellerName={product.sellerName}
-                  category={product.category}
-                  id1={product._id}
-                />
-              </div>
+        <Link to="/add-item">Add new product</Link>
+        <Container>
+          <Row>
+            {products.map((product) => (
+              <Col xs={12} md={4} className="justify-content-center">
+                <div className="item-card">
+                  <ItemCard
+                    key={product._id}
+                    name={product.itemName}
+                    district={product.district}
+                    price={product.price}
+                    sellerName={product.sellerName}
+                    category={product.category}
+                    id1={product._id}
+                  />
+                </div>
+              </Col>
             ))}
-        </div>
+          </Row>
+        </Container>
       </div>
     </>
-
   );
 };
 
